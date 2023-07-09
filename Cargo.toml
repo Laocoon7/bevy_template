@@ -10,13 +10,22 @@ default = [
     "core",
 ]
 dev = [
-    "bevy-inspector-egui"
+    "bevy-inspector-egui",
+
+    "game/dev",
+    "tools/dev",
 ]
-tracing = []
+tracing = [
+    "game/tracing",
+    "tools/tracing",
+]
 
 core = [
     "bevy/bevy_winit",
     "bevy/png",
+
+    "game/core",
+    "tools/core",
 ]
 
 ################################
@@ -34,6 +43,7 @@ opt-level = 3 # Major for everyone else
 [dependencies]
 # Workspace
 game = { workspace = true }
+tools = { workspace = true }
 
 # External
 bevy = { workspace = true }

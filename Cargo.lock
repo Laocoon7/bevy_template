@@ -738,6 +738,7 @@ dependencies = [
  "bevy_egui",
  "game",
  "image",
+ "tools",
  "winit",
 ]
 
