@@ -1,0 +1,6 @@
+/target
+/.aesprite
+/.vscode
+/.cargo
+settings.toml
+/save
