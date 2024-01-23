@@ -1,0 +1,18 @@
+[package]
+name = "bevy_utils"
+version = "0.1.0"
+edition = "2021"
+authors = ["{{authors}}"]
+
+[features]
+dev = []
+
+[dependencies]
+bevy_data = { workspace = true }
+bevy = { workspace = true }
+thiserror = { workspace = true }
+directories = { workspace = true }
+serde = { workspace = true }
+ron = { workspace = true }
+toml = { workspace = true }
+lazy_static = { workspace = true }

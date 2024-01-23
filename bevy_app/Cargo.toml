@@ -1,0 +1,20 @@
+[package]
+name = "bevy_app"
+version = "0.1.0"
+edition = "2021"
+authors = ["{{authors}}"]
+
+[features]
+dev = [
+    "bevy_data/dev",
+    "bevy_utils/dev",
+    "game/dev",
+]
+
+[dependencies]
+bevy_data = { workspace = true }
+bevy_utils = { workspace = true }
+game = { workspace = true }
+bevy = { workspace = true }
+winit = { workspace = true }
+image = { workspace = true }

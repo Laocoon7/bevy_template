@@ -1,0 +1,60 @@
+################################
+#########       Workspace
+################################
+[workspace]
+resolver = "2" # Important! wgpu/Bevy needs this!
+
+members = [
+    "bevy_app",
+    "bevy_data",
+    "bevy_utils",
+    "game",
+]
+
+################################
+#########       Optimizations
+################################
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+################################
+#########       Dependencies
+################################
+[workspace.dependencies]
+bevy_data = { path = "./bevy_data" }
+bevy_utils ={ path = "./bevy_utils" }
+game = { path = "./game" }
+
+bevy = { version = "0.12", features = ["dynamic_linking", "serialize"] } # A refreshingly simple data-driven game engine and app framework
+# bevy_egui = { version = "0.24", features = ["serde"] } # A plugin for Egui integration into Bevy
+# bevy_tweening = "0.9" # Tweening animation plugin for the Bevy game engine.
+# leafwing-input-manager = { version = "0.11", default-features = false, features = [] } # A powerfully direct stateful input manager for the Bevy game engine.
+
+# anyhow = "1.0" # Flexible concrete Error type built on std::error::Error
+thiserror = "1" # This library provides a convenient derive macro for the standard library's std::error::Error trait.
+
+directories = "5.0" # a mid-level library that provides config/cache/data paths, following the respective conventions on Linux, macOS and Windows
+serde = { version = "1", features = ["derive", "rc", "alloc"] } # A generic serialization/deserialization framework
+ron = { version = "0.8", features = ["integer128"] } # Rusty Object Notation
+toml = "0.8" # A native Rust encoder and decoder of TOML-formatted files and streams
+lazy_static = "1.4" # A macro for declaring lazily evaluated statics in Rust.
+# bitflags = "2.3" # A macro to generate structures which behave like bitflags.
+
+# futures-lite = { version = "2.1" } # A lightweight async prelude.
+# sled = { version = "0.34" }
+
+# rand = "0.8" # Random number generators and other randomness functionality.
+# rand_pcg = { version = "0.3", features = ["serde1"] } # Selected PCG random number generators
+# xxhash-rust = { version = "0.8", features = ["xxh3", "const_xxh3"] } # Implementation of xxhash
+# noise = "0.8" # Procedural noise generation library.
+
+# keep the following in sync with Bevy's dependencies
+# bevy/crates/bevy_winit
+winit = { version = "0.28.7", default-features = false } # Cross-platform window creation library.
+# bevy/crates/bevy_render
+image = { version = "0.24", default-features = false } # Imaging library written in Rust. Provides basic filters and decoders for the most common image formats.
